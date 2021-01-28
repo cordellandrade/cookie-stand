@@ -4,19 +4,34 @@ const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm',
 
 let seattle = {
     name: 'Seattle',
-    min: 23,
-    max = 65,
-    ave: 6.5,
+    minCustomerPerHour: 23,
+    maxCustomerPerHour: 65,
+    aveCookiesSoldPerHour: 6.5,
     cookiesSoldPerHourArray: [],
     dailyStoreTotal: 0,
     randomCookiePerHour: function() {
-
+        return Math.floor(Math.random() * (this.maxCustomerPerHour - this.minCustomerPerHour + 1) + this.minCustomerPerHour);
     },
 
     calCookiesSoldPerHour: function() {
+        let randomCustomerPerhour = this.randomCookiePerHour();
+        // console.log(randomCustomerPerhour);
+        for (let i = 0; i < hours.length; i++) {
+            var cookiesPerHour = Math.ceil(this.randomCookiePerHour() * this.aveCookiesSoldPerHour);
+            this.cookiesSoldPerHourArray.push(cookiesPerHour);
+            this.dailyStoreTotal += cookiesPerHour;
+            // console.log(this.dailyStoreTotal);
+        }
+
+
+    },
+    render: function() {
+        this.calCookiesSoldPerHour();
 
     },
 };
+
+seattle.render();
 
 let tokyo = {
     name: 'Tokyo',
