@@ -11,11 +11,11 @@ let seattle = {
     dailyStoreTotal: 0,
     randomCookiePerHour: function() {
 
-    }
+    },
 
-        calCookiesSoldPerHour: function() {
+    calCookiesSoldPerHour: function() {
 
-    }
+    },
 };
 
 let tokyo = {
