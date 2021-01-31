@@ -17,10 +17,6 @@ h1 {
     padding-bottom: 30px;
 }
 
-div {
-    color: purple;
-}
-
 p {
     font-family: Georgia;
     text-align: center;
@@ -37,26 +33,6 @@ ul {
 li {
     font-family: Georgia;
     padding-top: 15px;
-}
-
-#seattle {
-    margin-bottom: 20px;
-}
-
-#tokyo {
-    margin-bottom: 20px;
-}
-
-#dubai {
-    margin-bottom: 20px;
-}
-
-#paris {
-    margin-bottom: 20px;
-}
-
-#lima {
-    margin-bottom: 20px;
 }
 
 #sales-h1 {
