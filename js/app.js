@@ -12,18 +12,16 @@ let seattle = {
     name: 'Seattle',
     min: 23,
     max: 65,
-    avg: 6.5,
+    avg: 6.3,
     cookiesSoldPerHourArray: [],
     dailyStoreTotal: 0,
-    randomCookiePerHour: function() {
+    randomCustomerPerHour: function() {
         return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
     },
 
     calCookiesSoldPerHour: function() {
-        let randomCustomerPerhour = this.randomCookiePerHour();
-        // console.log(randomCustomerPerhour);
         for (let i = 0; i < hours.length; i++) {
-            var cookiesPerHour = Math.ceil(this.randomCookiePerHour() * this.avg);
+            var cookiesPerHour = Math.ceil(this.randomCustomerPerHour() * this.avg);
             this.cookiesSoldPerHourArray.push(cookiesPerHour);
             this.dailyStoreTotal += cookiesPerHour;
             // console.log(this.dailyStoreTotal);
