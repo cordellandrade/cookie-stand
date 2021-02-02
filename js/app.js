@@ -17,35 +17,37 @@ function Store(name, min, max, avg) {
     this.avg = avg;
     this.cookiesSoldPerHourArray = [];
     this.dailyStoreTotal = 0;
-    this.randomCustomer = function() {
-        return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-    }
-    this.cookiesPurchasedPerHour = function() {
-        for (let i = 0; i < hours.length; i++) {
-            let cookiesPerHour = Math.ceil(this.randomCustomer() * this.avg);
-            this.cookiesSoldPerHourArray.push(cookiesPerHour);
-            this.dailyStoreTotal += cookiesPerHour;
-        }
-    }
-    this.render = function() {
-        this.cookiesPurchasedPerHour();
-        let tr = document.createElement('tr');
-        let td = document.createElement('td');
-        td.textContent = this.name;
-        tr.appendChild(td);
+}
 
-        for (let i = 0; i < hours.length; i++) {
-            let td = document.createElement('td');
-            td.textContent = this.cookiesSoldPerHourArray[i];
-            tr.appendChild(td);
-        }
-
-        td = document.createElement('td');
-        td.textContent = this.dailyStoreTotal;
-        tr.appendChild(td);
-        cookieTable.appendChild(tr);
+Store.prototype.randomCustomer = function() {
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+}
+Store.prototype.cookiesPurchasedPerHour = function() {
+    for (let i = 0; i < hours.length; i++) {
+        let cookiesPerHour = Math.ceil(this.randomCustomer() * this.avg);
+        this.cookiesSoldPerHourArray.push(cookiesPerHour);
+        this.dailyStoreTotal += cookiesPerHour;
     }
 }
+Store.prototype.render = function() {
+    this.cookiesPurchasedPerHour();
+    let tr = document.createElement('tr');
+    let td = document.createElement('td');
+    td.textContent = this.name;
+    tr.appendChild(td);
+
+    for (let i = 0; i < hours.length; i++) {
+        let td = document.createElement('td');
+        td.textContent = this.cookiesSoldPerHourArray[i];
+        tr.appendChild(td);
+    }
+
+    td = document.createElement('td');
+    td.textContent = this.dailyStoreTotal;
+    tr.appendChild(td);
+    cookieTable.appendChild(tr);
+}
+
 
 
 function renderHeader() {
