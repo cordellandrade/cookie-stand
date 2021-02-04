@@ -57,3 +57,18 @@ main {
 td:hover {
     background-color: red;
 }
+
+#family {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#fish {
+    float: right;
+}
+
+#googlefont {
+    font-family: 'Bebas Neue', cursive;
+    font-size: xx-large;
+}
