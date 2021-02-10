@@ -98,6 +98,14 @@ function renderFooter() {
     cookieTable.appendChild(tfoot);
 }
 
+// function renderAll() {
+//     for (let i = 0; i < Store.length; i++) {
+//         Store[i].render();
+//     }
+// }
+
+
+
 var seattle = new Store('Seattle', 23, 65, 6.3);
 var tokyo = new Store('Tokyo', 3, 24, 1.2);
 var dubai = new Store('Dubai', 11, 38, 3.7);
@@ -123,6 +131,7 @@ function newStore(event) {
 
 renderHeader();
 
+// renderAll();
 seattle.render();
 tokyo.render();
 dubai.render();
